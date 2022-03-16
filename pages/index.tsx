@@ -34,7 +34,7 @@ function MarcarPosicao(casa){
     if(jogadas>4){
       if(verificarFimDeJogo()){
         var msg = document.getElementById('msg');
-        msg.append("O jogador "+jogador+" VENCEU!!");
+        msg.append("O jogador "+jogador+" venceu!!");
       }
     }
   }
