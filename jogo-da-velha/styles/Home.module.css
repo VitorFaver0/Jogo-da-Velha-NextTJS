@@ -1,0 +1,23 @@
+.jogo{
+    width:633px;
+    height:630px;
+    border:solid 3px;
+    display: flex;
+}
+ 
+.linha{
+    height:210px;
+    border-bottom:solid 1px;
+}
+ 
+.casa{
+    width:210px;
+    height:100%;
+    border-right:solid 1px;
+    border-bottom:solid 1px;
+    float:left;
+}
+
+.casa:hover{
+  background: #ccc;
+}

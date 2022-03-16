@@ -1,4 +1,4 @@
-import styles from '../css/styles.module.css';
+import styles from '../styles/Home.module.css'
 
 var posicao = 0;
 var jogador = 0;
@@ -34,7 +34,7 @@ function MarcarPosicao(casa){
     if(jogadas>4){
       if(verificarFimDeJogo()){
         var msg = document.getElementById('msg');
-        msg.append("O jogador "+jogador+" venceu!!");
+        msg.append("O jogador "+jogador+" VENCEU!!");
       }
     }
   }
