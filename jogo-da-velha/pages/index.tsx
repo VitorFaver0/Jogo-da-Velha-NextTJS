@@ -1,12 +1,13 @@
 import styles from '../styles/Home.module.css'
 
-var posicao = 0;
 var jogador = 0;
 var tabuleiro = [0,0,0,0,0,0,0,0,0];
 var jogadas = 0;
+var acabou = false;
+
 function MarcarPosicao(casa){
   var x: number = +casa;
-  if(tabuleiro[x]==0){
+  if(tabuleiro[x]==0 && !acabou){
     if(jogador==0){
       jogador = 1;
     }
@@ -41,11 +42,14 @@ function MarcarPosicao(casa){
 }
 
 function casasIguais(a, b, c){
-  if((tabuleiro[a]==tabuleiro[b])&&(tabuleiro[a]==tabuleiro[c])){
-    return true;
-  }
-  else{
-    return false;
+  if(tabuleiro[a]!=0 && tabuleiro[b]!=0 && tabuleiro[c]!=0){
+    if((tabuleiro[a]==tabuleiro[b])&&(tabuleiro[a]==tabuleiro[c])){
+      acabou = true;
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }
 
@@ -55,11 +59,9 @@ function verificarFimDeJogo(){
     casasIguais(0, 3, 6) || casasIguais(1, 4, 7) || casasIguais(2, 5, 8) ||
     casasIguais(0, 4, 8) || casasIguais(2, 4, 6))
   {
-    console.log('true')
     return true;
   }
   else{
-    console.log('false')
     return false;
   }
 }
@@ -88,9 +90,9 @@ function GerarTabela(){
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.main}>
       {GerarTabela()}
-      <div id="msg"></div>
+      <div className={styles.winMsg} id="msg"></div>
     </div>
   )
 }

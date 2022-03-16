@@ -1,3 +1,10 @@
+.main{
+  width: 700px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%; 
+}
+
 .jogo{
     width:633px;
     height:630px;
@@ -20,4 +27,10 @@
 
 .casa:hover{
   background: #ccc;
+}
+
+.winMsg{
+  font: inherit;
+  font-size: 30px;
+  color: mediumseagreen;
 }
